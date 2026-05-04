@@ -49,14 +49,83 @@ example (P Q : Prop) (h1 : P -> Q) (h2 : Q -> P) : P <-> Q := by
   · exact h2
 
 example (P Q : Prop) (q : Q) : (Q -> P) <-> P := by
-  constructor
+  constructor <;> intro h
   case mp =>
-    intro qp
-    apply qp
+    apply h
     exact q
   case mpr =>
-    intro p q2
-    trivial
+    intro q2
+    apply h
 
+-- 仮定の同値性を使う rewrite (rw)
+example (P Q : Prop) (h : P <-> Q) (hp : P) : Q := by
+  rewrite [h] at hp
+  exact hp
 
+example (P Q : Prop) (h : P <-> Q) (hp : P) : Q := by
+  rewrite [<- h]
+  exact hp
 
+#eval And True True
+#eval Or True False
+
+-- 論理積は分解できる
+example (P Q : Prop) (p : P) (q : Q) : And P Q := by
+  constructor
+  case left => exact p
+  case right => exact q
+
+-- .left, .right でアクセスできる
+example (P Q : Prop) (h : And P Q) : P := by
+  exact h.left
+
+-- ゴールの論理和は一方を証明すればよい
+example (P Q : Prop) (p : P) : Or P Q := by
+  left
+  exact p
+
+-- 仮定の論理和は cases で分解できる
+example (P Q : Prop) (h : Or P Q) : Or Q P := by
+  cases h with
+  | inl p =>
+    right
+    exact p
+  | inr q =>
+    left
+    exact q
+
+-- 練習問題
+example (P Q : Prop) : (Or (Not P) Q) -> (P -> Q) := by
+  intro h
+  intro p
+  cases h with
+  | inl np =>
+    exfalso
+    contradiction
+  | inr q =>
+    exact q
+
+-- ド・モルガン
+example (P Q : Prop) : Not (Or P Q) <-> (And (Not P) (Not Q)) := by
+  constructor <;> intro h
+  case mp =>
+    constructor
+    case left =>
+      intro p
+      apply h
+      left
+      exact p
+    case right =>
+      intro q
+      apply h
+      right
+      exact q
+  case mpr =>
+    intro h2
+    cases h2 with
+    | inl p =>
+      apply h.left
+      exact p
+    | inr q =>
+      apply h.right
+      exact q
