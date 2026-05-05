@@ -5,3 +5,4 @@
 - `src/03/tips.lean` — タクティクの使い方（have・suffices・exact?・show）
 - `src/03/pred-logic.lean` — 述語論理（forall・exists・opaque・by_cases・排中律）
 - `src/03/choice.lean` — Classical.choice・全射と右逆写像・noncomputable・二重否定除去
+- `src/03/curry_howard.lean` — カリー＝ハワード同型（関数と証明の対応）
