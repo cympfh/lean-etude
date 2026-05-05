@@ -6,3 +6,4 @@
 - `src/03/pred-logic.lean` — 述語論理（forall・exists・opaque・by_cases・排中律）
 - `src/03/choice.lean` — Classical.choice・全射と右逆写像・noncomputable・二重否定除去
 - `src/03/curry_howard.lean` — カリー＝ハワード同型（関数と証明の対応）
+- `src/03/dependent_type.lean` — 依存型（MyVect・依存ペア・forall と依存関数型の同値）
