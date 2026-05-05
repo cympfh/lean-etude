@@ -7,3 +7,4 @@
 - `src/03/choice.lean` — Classical.choice・全射と右逆写像・noncomputable・二重否定除去
 - `src/03/curry_howard.lean` — カリー＝ハワード同型（関数と証明の対応）
 - `src/03/dependent_type.lean` — 依存型（MyVect・依存ペア・forall と依存関数型の同値）
+- `src/04/addition.lean` — 加算の定理証明（induction・simp・calc・ac_rfl・交換法則・結合法則）
