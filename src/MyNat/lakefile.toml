@@ -1,0 +1,6 @@
+name = "MyNat"
+version = "0.1.0"
+defaultTargets = ["MyNat"]
+
+[[lean_lib]]
+name = "MyNat"

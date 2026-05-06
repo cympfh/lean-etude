@@ -8,3 +8,6 @@
 - `src/03/curry_howard.lean` — カリー＝ハワード同型（関数と証明の対応）
 - `src/03/dependent_type.lean` — 依存型（MyVect・依存ペア・forall と依存関数型の同値）
 - `src/04/addition.lean` — 加算の定理証明（induction・simp・calc・ac_rfl・交換法則・結合法則）
+- `src/MyNat/MyNat/Definition.lean` — MyNat 帰納的型の定義（OfNat インスタンス・数値リテラル・Repr）
+- `src/MyNat/MyNat/Add.lean` — MyNat 加算の定義と証明（交換法則・結合法則・ac_rfl 登録）
+- `src/MyNat/MyNat/Mul.lean` — MyNat 乗算の定義と証明（交換法則・分配法則・結合法則・カスタムタクティク distrib）
