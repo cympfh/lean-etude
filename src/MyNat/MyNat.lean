@@ -3,3 +3,4 @@
 import MyNat.Definition
 import MyNat.Add
 import MyNat.Mul
+import MyNat.AddCancel

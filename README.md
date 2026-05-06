@@ -11,3 +11,4 @@
 - `src/MyNat/MyNat/Definition.lean` — MyNat 帰納的型の定義（OfNat インスタンス・数値リテラル・Repr）
 - `src/MyNat/MyNat/Add.lean` — MyNat 加算の定義と証明（交換法則・結合法則・ac_rfl 登録）
 - `src/MyNat/MyNat/Mul.lean` — MyNat 乗算の定義と証明（交換法則・分配法則・結合法則・カスタムタクティク distrib）
+- `src/MyNat/MyNat/AddCancel.lean` — 加算の消去法則（injection・add_right_cancel・add_left_cancel・sum_zero・mul_zero_iff）
